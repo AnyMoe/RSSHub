@@ -26,7 +26,7 @@
         details {
             text-align: left;
             max-height: 400px;
-            overflow: scroll;
+            overflow: auto;
         }
 
         details::-webkit-scrollbar {
@@ -71,7 +71,7 @@
 <body>
     <div class="content">
         <p>
-            <img src="https://i.imgur.com/NZpRScX.png" alt="RSSHub" width="100">
+            <img src="https://i.loli.net/2019/04/23/5cbeb7e41414c.png" alt="RSSHub" width="100">
         </p>
 
         <h1>Welcome to
@@ -91,10 +91,12 @@
         <details>
             <summary>debug</summary>
             {{ each debug }}
+            {{ if $value }}
             <div class="debug-item">
                 <span class="debug-key">{{ $value.name }}: </span>
                 <span class="debug-value">{{@ $value.value }}</span>
             </div>
+            {{ /if }}
             {{ /each }}
         </details>
         {{ /if }}
